@@ -17,7 +17,7 @@ model = pickle.load(open('loan_status_prediction_rs.sav', 'rb'))
 app = FastAPI()
 
 origins = [
-    "http://localhost:3000",  # React dev server
+    "http://localhost:5173",  # React dev server
     "https://grih-khoj.onrender.com",  # Your deployed frontend
 ]
 
