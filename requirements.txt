@@ -1,0 +1,14 @@
+fastapi==0.112.2
+fastjsonschema==2.20.0
+ipykernel==6.29.4
+ipython==8.26.0
+json5==0.9.25
+jsonpointer==3.0.0
+jsonschema==4.22.0
+notebook==7.2.1
+pickle-mixin==1.0.2
+pydantic==2.8.2
+pydantic_core==2.20.1
+scikit-learn==1.5.0
+scipy==1.14.0
+uvicorn==0.30.6
