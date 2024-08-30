@@ -6,6 +6,7 @@ Created on Sat Jun 11 18:50:57 2022
 """
 
 from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 import pickle
 
@@ -14,6 +15,19 @@ model = pickle.load(open('loan_status_prediction_rs.sav', 'rb'))
 
 # Initialize FastAPI app
 app = FastAPI()
+
+origins = [
+    "http://localhost:3000",  # React dev server
+    "https://grih-khoj.onrender.com",  # Your deployed frontend
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,  # List of allowed origins
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 # Define the request body using Pydantic
 class PredictionRequest(BaseModel):
